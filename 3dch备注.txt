@@ -1,3 +1,5 @@
+
+2019052920：:0
 1、 本项目是用python的Flask后端框架与微信小程序做request通信，用来保存在微信小程序上提交到flask的后端的数据的保存，查看工作。
 
 2、启用调试模式后，需要在pycharm软件的终端下输入命令,才能启动程序;python manage.py runserver -d -r -h 0.0.0.0 -p 9000
