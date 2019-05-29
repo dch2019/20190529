@@ -1,0 +1,29 @@
+1、 本项目是用python的Flask后端框架与微信小程序做request通信，用来保存在微信小程序上提交到flask的后端的数据的保存，查看工作。
+
+2、启用调试模式后，需要在pycharm软件的终端下输入命令,才能启动程序;python manage.py runserver -d -r -h 0.0.0.0 -p 9000
+
+3、在微信小程序上提交的数据传递给Flask后端是以GET的通信协议传递：
+传递到后端的数据内容：127.0.0.1 - - [24/May/2019 07:50:44] "GET /request/?txt1=2222&x=1&y= HTTP/1.1" 200 -。解释：含由txt1,x,y等三个参数的信息。
+
+
+
+更新：
+01WX_Flaskmanage.py：开始进行与微信小程序通信
+02WX_Flaskmanage.py：微信小程序与后端的Flask进行后台数据通信，1、后端也可以向微信小程序提交反馈（通过return：）数据。用于提醒数据已经被数据库接收保存了。2、将从Flask传递回来的数据在微信微信小程序前端进行显示，进行轮训显示或者直接进行显示。3、使用腾讯云服务器可以实现微信小程序与Flask后端进行通信了。
+03WX_Flaskmanage.py：1、从微信小程序传给后端Flask的数据保存在MySQL数据库中去。2、可以实现在微信小程序上提交中文数据，保存到数据库中去。3、可以实现在CMD命令行中操作数据库。4、设置ID为主键，微信小程序可以按照顺序依次提交，不会再有冲突数据导致无法传递数据。5、支持中文传输。6、数据库表头是中文，更加易懂。7、将此代码在腾讯云上运行后，实现了将微信小程序的数据提交并保存到腾讯云上的MySQL80数据库中去了（用户名root 密码root）
+
+数据库操作相关命令：启动数据库：net start MySQL80 登录数据库：mysql -u root -p MySQL80数据库信息：用户：root，密码：root。
+操作数据库的常规命令：show databases;select * from  caiwu_wx_flask_table; show tables; desc  caiwu_wx_flask_table;delete from CaiWu_WX_Flask_table where name = "12";
+
+
+
+关于i++ 、 ++i和i+=1、i=i+1
+输出：print("name:%s"%name)
+
+
+--------------------------------------------------------------------
+手机号码查询API：
+https://apis.juhe.cn/mobile/get?key=d2c6ae214b36e3b0810d81011b68088f&phone=18551412685
+手机号码查询后返回的结果：
+{"resultcode":"200","reason":"Return Successd!","result":{"province":"江苏","city":"南京","areacode":"025","zip":"210000","company":"联通","card":""},"error_code":0}
+
